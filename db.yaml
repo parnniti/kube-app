@@ -15,12 +15,12 @@ spec:
         app: vprodb
     spec:
       containers:
-      - image: vprofile/vprofiledb:v1
+      - image: vprofile/vprofiledb:V1
         name: vprodb
         args:
-          - "ignore-db-dir=lost+found"
+          - "--ignore-db-dir=lost+found"
         volumeMounts:
-          - mouthPath: /var/lib/mysql
+          - mountPath: /var/lib/mysql
             name: vpro-db-data
         ports:
         - containerPort: 3306
